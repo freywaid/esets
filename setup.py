@@ -4,15 +4,15 @@ with open("README.md", "rt") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="eset",
-    version="0.0.2",
+    name="esets",
+    version="0.0.3",
     author="Frey Waid",
     author_email="logophage1@gmail.com",
-    description="Extended set",
+    description="Extended sets",
     license="MIT license",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/freywaid/eset",
+    url="https://github.com/freywaid/esets",
     packages=setuptools.find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
