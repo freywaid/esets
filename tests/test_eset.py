@@ -1,5 +1,5 @@
 import pytest
-from eset import eset
+from esets import eset, inf
 
 
 A = eset(('a', 'b', 'c'))
@@ -53,4 +53,9 @@ def test_updates():
     a = eset(A)
     a |= B
     assert a == A | B
+
+
+def test_cardinality():
+    a = ~A
+    assert abs(a) == inf.countable
 

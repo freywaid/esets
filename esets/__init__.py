@@ -1,6 +1,7 @@
 import collections
 import copy
 import itertools
+from . import inf
 
 
 def _decode(s):
@@ -19,7 +20,7 @@ def frozen(iterable=(), complement=False):
     return eset(iterable, complement, True)
 
 
-class eset(collections.Collection):
+class eset(collections.abc.Collection):
     """
     Set and complement sets
     >>> 'hello' in ~eset(['hello'])
@@ -89,10 +90,7 @@ class eset(collections.Collection):
     def __abs__(self):
         return self.cardinality()
     def cardinality(self):
-        if self._complement:
-            import math
-            return math.inf # FIXME: this is aleph-1 when really we're aleph-0
-        return len(self._items)
+        return inf.countable if self._complement else len(self._items)
     def __bool__(self):
         return True if self.complement else bool(self._items)
     def __invert__(self):
