@@ -5,7 +5,7 @@ with open("README.md", "rt") as f:
 
 setuptools.setup(
     name="esets",
-    version="0.1.0",
+    version="0.1.1",
     author="Frey Waid",
     author_email="logophage1@gmail.com",
     description="Extended sets",

@@ -92,7 +92,7 @@ class eset(collections.abc.Collection):
     def cardinality(self):
         return inf.countable if self._complement else len(self._items)
     def __bool__(self):
-        return True if self.complement else bool(self._items)
+        return self._complement or bool(self._items)
     def __invert__(self):
         return self._fork(self._items, not self._complement)
     def __contains__(self, item):
