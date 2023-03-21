@@ -188,7 +188,9 @@ class eset(collections.abc.Collection):
     def __rsub__(self, other):
         if isinstance(other, (frozenset, set)):
             other = self._fork(other, False)
-        return other - self
+        out = other - self
+        out._frozen = self._frozen
+        return out
 
     def __xor__(self, other):
         return (self | other) - (self & other)
